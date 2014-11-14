@@ -1,0 +1,166 @@
+---
+---
+
+@font-face {
+  font-family: 'gotham_proregular';
+  src: url('/fonts/gothaproreg-webfont.eot');
+  src: url('/fonts/gothaproreg-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/gothaproreg-webfont.woff2') format('woff2'),
+       url('/fonts/gothaproreg-webfont.woff') format('woff'),
+       url('/fonts/gothaproreg-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin gradient-horizontal($start-color: #000, $first-mid: #000, $second-mid: #000, $end-color: #000) {
+  background-image: -webkit-linear-gradient(left, $start-color, $first-mid, $second-mid, $end-color);
+  background-image: -o-linear-gradient(left, $start-color, $first-mid, $second-mid, $end-color);
+  background-image: linear-gradient(to right, $start-color, $first-mid, $second-mid, $end-color);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+$port-gore: #1f1a40;
+$cello: #1f4865;
+$neptune: #6fa2b0;
+$dawn-pink: #e9f5e6;
+
+html, body {
+  height: 100%;
+  font-family: 'gotham_proregular';
+}
+
+.inner {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.top {
+  @include gradient-horizontal($dawn-pink, $neptune, $cello, $port-gore);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 25%;
+  left: 0;
+  min-height: 500px;
+  overflow: auto;
+
+  .header {
+    margin: 50px 0 0 0;
+
+    .logo {
+      display: block;
+      width: 146px;
+      height: 23px;
+      background: url(/images/logo.png) no-repeat center center;
+      background-size: 146px 23px;
+    }
+  }
+
+  .content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 384px;
+
+    .devices {
+      position: absolute;
+      left: 50%;
+      width: 492px;
+      height: 384px;
+      background: url(/images/devices.png) no-repeat center center;
+      background-size: 492px 384px;
+    }
+  }
+}
+
+.bottom {
+  @include box-shadow(0, 1px, 3px, rgba(0, 0, 0, 29));
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 25%;
+  min-height: 120px;
+  background: #fff;
+
+  .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -60px;
+    margin-left: -470px;
+  }
+
+  ul {
+    @include clearfix;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: block;
+      float: left;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      width: 20%;
+      height: 120px;
+
+      &.icon01 {
+        background: url(/images/icon01.png) no-repeat center 20%;
+        background-size: 67px 58px;
+      }
+
+      &.icon02 {
+        background: url(/images/icon02.png) no-repeat center 20%;
+        background-size: 57px 56px;
+      }
+
+      &.icon03 {
+        background: url(/images/icon03.png) no-repeat center 20%;
+        background-size: 50px 61px;
+      }
+
+      &.icon04 {
+        background: url(/images/icon04.png) no-repeat center 20%;
+        background-size: 104px 59px;
+      }
+
+      &.icon05 {
+        background: url(/images/icon05.png) no-repeat center 20%;
+        background-size: 66px 60px;
+      }
+
+      span {
+        display: block;
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+      }
+    }
+  }
+}
