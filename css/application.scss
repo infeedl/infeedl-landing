@@ -32,6 +32,12 @@
   }
 }
 
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
 @mixin clearfix {
   &:after {
     content: "";
@@ -44,6 +50,9 @@ $port-gore: #1f1a40;
 $cello: #1f4865;
 $neptune: #6fa2b0;
 $dawn-pink: #e9f5e6;
+$mystic: #dde7eb;
+
+$regular-font-size: 13px;
 
 html, body {
   height: 100%;
@@ -60,20 +69,56 @@ html, body {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 25%;
+  bottom: 30%;
   left: 0;
   min-height: 500px;
   overflow: auto;
 
   .header {
+    @include clearfix;
     margin: 50px 0 0 0;
 
     .logo {
       display: block;
+      float: left;
       width: 146px;
       height: 23px;
       background: url(/images/logo.png) no-repeat center center;
       background-size: 146px 23px;
+    }
+
+    ul {
+      display: block;
+      float: left;
+      padding: 0;
+      margin: 2px 0 0 32px;
+
+      li {
+        display: inline-block;
+        font-size: $regular-font-size;
+        margin: 0 22px 0 0;
+
+        a, a:hover, a:active {
+          @include opacity(0.9);
+          color: $mystic;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .like {
+      display: block;
+      float: right;
+
+      .caption {
+        @include opacity(0.5);
+        color: $mystic;
+        font-size: $regular-font-size;
+      }
     }
   }
 
@@ -83,6 +128,57 @@ html, body {
     bottom: 0;
     left: 0;
     height: 384px;
+
+    .hero {
+      position: absolute;
+      top: 5%;
+      right: 50%;
+      width: 350px;
+      margin: 0 120px 0 0;
+      color: #fff;
+
+      h1 {
+        font-weight: normal;
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 22px;
+      }
+
+      .btns {
+        margin: 25px 0 0 0;
+
+        button {
+          color: #fff;
+          font-size: 14px;
+          padding: 10px 15px;
+
+          &:first-child {
+            margin-right: 25px;
+          }
+
+          &.launch {
+            border: 0;
+            border-radius: 40px;
+            background-image: -o-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
+            background-image: -moz-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
+            background-image: -ms-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
+            background-image: linear-gradient(-179deg, #5E8C98 0%, #76A7B3 100%);
+            -moz-box-shadow:    0px 1px 1px 0px rgba(255,255,255,0.17), inset 0px 1px 1px 0px rgba(0,0,0,0.10);
+            box-shadow:         0px 1px 1px 0px rgba(255,255,255,0.17), inset 0px 1px 1px 0px rgba(0,0,0,0.10);
+          }
+
+          &.manifesto {
+            border: 0;
+            background: url(/images/icon-manifesto.png) no-repeat center left;
+            background-size: 19px 23px;
+            padding-left: 30px;
+          }
+        }
+      }
+    }
 
     .devices {
       position: absolute;
@@ -101,7 +197,7 @@ html, body {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 25%;
+  height: 30%;
   min-height: 120px;
   background: #fff;
 
@@ -159,7 +255,7 @@ html, body {
         top: 80px;
         width: 100%;
         text-align: center;
-        font-size: 13px;
+        font-size: $regular-font-size;
       }
     }
   }
