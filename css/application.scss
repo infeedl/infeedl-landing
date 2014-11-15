@@ -46,6 +46,13 @@
   }
 }
 
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
     @content;
@@ -204,27 +211,20 @@ html, body {
       }
 
       .btns {
+        width: 150%;
         margin: 22px 0 0 0;
 
-        button {
+        .launch, .manifesto {
           color: #fff;
           font-size: 14px;
           padding: 10px 20px;
 
-          &:first-child {
-            margin-right: 25px;
+          &:focus {
+            outline: 0;
           }
 
-          &.launch {
-            border: 0;
-            border-radius: 40px;
-            margin-left: -6px;
-            background-image: -o-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
-            background-image: -moz-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
-            background-image: -ms-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
-            background-image: linear-gradient(-179deg, #5E8C98 0%, #76A7B3 100%);
-            -moz-box-shadow:    0px 1px 1px 0px rgba(255,255,255,0.17), inset 0px 1px 1px 0px rgba(0,0,0,0.10);
-            box-shadow:         0px 1px 1px 0px rgba(255,255,255,0.17), inset 0px 1px 1px 0px rgba(0,0,0,0.10);
+          &:first-child {
+            margin-right: 25px;
           }
 
           &.manifesto {
@@ -233,9 +233,69 @@ html, body {
             background: url(/images/icon-manifesto.png) no-repeat center left;
             background-size: 19px 23px;
             padding-left: 30px;
+
+            &:hover {
+              @include animation('none');
+              @include opacity(1);
+            }
           }
-          &.manifesto:hover {
-          	opacity: 0.5
+        }
+
+        form {
+          display: inline-block;
+          position: relative;
+
+          .launch {
+            @include placeholder {
+              color: #fff;
+            }
+
+            border: 0;
+            cursor: pointer;
+
+            border-radius: 40px;
+            background-image: -o-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
+            background-image: -moz-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
+            background-image: -ms-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
+            background-image: linear-gradient(-179deg, #5E8C98 0%, #76A7B3 100%);
+            -moz-box-shadow:  0px 1px 1px 0px rgba(255,255,255,0.17), inset 0px 1px 1px 0px rgba(0,0,0,0.10);
+            box-shadow:       0px 1px 1px 0px rgba(255,255,255,0.17), inset 0px 1px 1px 0px rgba(0,0,0,0.10);
+          }
+
+          .submit {
+            display: none;
+            outline: 0;
+          }
+
+          &.focused {
+            .launch {
+              @include placeholder {
+                color: rgba(255, 255, 255, .4);
+              }
+
+              cursor: text;
+              width: 245px;
+            }
+
+            .submit {
+              display: block;
+              position: absolute;
+              top: 5px;
+              right: 32px;
+              width: 26px;
+              height: 26px;
+              border: 0;
+              background: url(/images/enter.png) no-repeat center center;
+              background-size: 26px 26px;
+            }
+          }
+
+          &.completed {
+            .launch {
+              background: none;
+              -moz-box-shadow: none;
+              box-shadow: none;
+            }
           }
         }
       }

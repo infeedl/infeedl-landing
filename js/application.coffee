@@ -14,3 +14,24 @@ $(document).on("click", ".overlay.manifesto .close", ->
     $(".overlay.manifesto").addClass("hidden")
   , 400)
 )
+
+$(document).on("focus", ".launch", ->
+  return if $(this).parent().hasClass("completed")
+  $(this).parent().addClass("focused")
+  $(this).attr("placeholder", $(this).data("focus-placeholder"))
+)
+
+complete = ->
+  $("form").removeClass("focused").addClass("completed")
+  $(".launch").val("").attr("disabled", true).attr("placeholder", $(".launch").data("complete-placeholder"))
+
+$(document).on("submit", "form", ->
+  $.getJSON(
+    "http://infeedl.createsend.com/t/t/s/dttytu/&callback=?"
+    { "cm-dttytu-dttytu": $(".launch").val() }
+    (->
+      complete()
+  ).bind(this))
+
+  false
+)
