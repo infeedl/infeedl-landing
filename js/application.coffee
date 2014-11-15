@@ -27,10 +27,13 @@ complete = ->
 
 $(document).on("submit", "form", ->
   $.getJSON(
-    "http://infeedl.createsend.com/t/t/s/dttytu/&callback=?"
+    "http://infeedl.createsend.com/t/t/s/dttytu/?callback=?"
     { "cm-dttytu-dttytu": $(".launch").val() }
-    (->
-      complete()
+    ((data) ->
+      if data.Status.toString() == "200"
+        complete()
+      else
+        alert(data.Message)
   ).bind(this))
 
   false
