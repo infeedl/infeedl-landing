@@ -40,10 +40,36 @@
 
 @mixin clearfix {
   &:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation($params) {
+  -webkit-animation: #{$params};
+  -moz-animation: #{$params};
+  animation: #{$params};
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
 }
 
 $port-gore: #1f1a40;
@@ -54,7 +80,14 @@ $mystic: #dde7eb;
 
 $regular-font-size: 13px;
 
+@include keyframes(manifesto-button) {
+  0% { @include opacity(1); }
+  80% { @include opacity(0.5); }
+  100% { @include opacity(1); }
+}
+
 html, body {
+  @include gradient-horizontal($dawn-pink, $neptune, $cello, $port-gore);
   height: 100%;
   font-family: 'gotham_proregular';
 }
@@ -67,9 +100,11 @@ html, body {
   margin: 0 auto;
 }
 
+.hidden {
+  display: none;
+}
 
 .top {
-  @include gradient-horizontal($dawn-pink, $neptune, $cello, $port-gore);
   position: absolute;
   top: 0;
   right: 0;
@@ -111,7 +146,7 @@ html, body {
         margin: 0 22px 0 0;
 
         a, a:hover, a:active {
-          @include opacity(0.9);
+          @include opacity(.9);
           color: $mystic;
           text-decoration: none;
         }
@@ -127,9 +162,13 @@ html, body {
       float: right;
 
       .caption {
-        @include opacity(0.5);
+        @include opacity(.5);
+        display: inline-block;
+
         color: $mystic;
         font-size: $regular-font-size;
+        padding-top: 2px;
+        vertical-align: top;
       }
     }
   }
@@ -185,6 +224,7 @@ html, body {
           }
 
           &.manifesto {
+            @include animation('manifesto-button 2s infinite');
             border: 0;
             background: url(/images/icon-manifesto.png) no-repeat center left;
             background-size: 19px 23px;
@@ -286,3 +326,58 @@ html, body {
   }
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .7);
+
+  .inner {
+    @include transition(all, .4s, ease-in);
+    position: absolute;
+    top: 100%;
+    bottom: 5%;
+    left: 50%;
+    width: 625px;
+    height: auto;
+    margin-left: -312px;
+    padding: 20px 0;
+    background: #000;
+    color: #fff;
+
+    &.shown {
+      top: 5%;
+    }
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: -50px;
+      width: 26px;
+      height: 27px;
+      background: url(/images/close.png) no-repeat center center;
+      background-size: 26px 27px;
+      cursor: pointer;
+    }
+
+    .contents {
+      height: 100%;
+      overflow: auto;
+
+      h1 {
+        margin: 50px 0 30px 0;
+        text-align: center;
+        font-size: 36px;
+        line-height: 34px;
+      }
+
+      p {
+        margin: 25px 42px;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+}
