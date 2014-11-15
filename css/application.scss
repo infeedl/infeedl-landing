@@ -105,16 +105,18 @@ html, body {
 }
 
 .top {
+  @include gradient-horizontal($dawn-pink, $neptune, $cello, $port-gore);
   position: absolute;
   top: 0;
   right: 0;
   bottom: 20%;
   left: 0;
   min-height: 500px;
-  overflow: auto;
+  overflow: hidden;
 
-  @media screen and (max-height: 500px) {
-    padding-bottom: 120px;
+  @media screen and (max-height: 625px) {
+    bottom: 0;
+    padding-bottom: 125px;
   }
 
   .header {
@@ -175,8 +177,8 @@ html, body {
 
   .content {
     position: absolute;
+    top: 25%;
     right: 0;
-    bottom: 0;
     left: 0;
     height: 384px;
 
@@ -241,8 +243,6 @@ html, body {
       position: absolute;
       left: 50%;
       width: 525px;
-      height: 384px;
-      overflow: hidden;
 
       span {
         display: inline-block;
