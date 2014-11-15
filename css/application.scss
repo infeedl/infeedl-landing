@@ -255,17 +255,17 @@ html, body {
 
       &.icon02 {
         background: url(/images/icon02.png) no-repeat center 20%;
-        background-size: 57px 56px;
+        background-size: 57px 66px;
       }
 
       &.icon03 {
         background: url(/images/icon03.png) no-repeat center 20%;
-        background-size: 50px 61px;
+        background-size: 51px 61px;
       }
 
       &.icon04 {
         background: url(/images/icon04.png) no-repeat center 20%;
-        background-size: 104px 59px;
+        background-size: 106px 59px;
       }
 
       &.icon05 {
@@ -279,8 +279,10 @@ html, body {
         top: 80px;
         width: 100%;
         text-align: center;
+        margin-top: 4px;
         font-size: $regular-font-size;
       }
     }
   }
 }
+
