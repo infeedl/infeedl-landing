@@ -228,7 +228,7 @@ html, body {
           }
 
           &.manifesto {
-            @include animation('manifesto-button 2s infinite');
+            @include animation('manifesto-button 4s infinite');
             border: 0;
             background: url(/images/icon-manifesto.png) no-repeat center left;
             background-size: 19px 23px;
