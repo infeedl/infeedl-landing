@@ -149,12 +149,14 @@ html, body {
 
         a, a:hover, a:active {
           @include opacity(.9);
+          @include transition(opacity, .4s, ease-in);
+
           color: $mystic;
           text-decoration: none;
         }
 
         a:hover {
-          opacity: 0.5
+          @include opacity(.5);
         }
       }
     }
