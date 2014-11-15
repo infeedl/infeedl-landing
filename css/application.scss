@@ -59,6 +59,7 @@ html, body {
   font-family: 'gotham_proregular';
 }
 
+
 .inner {
   position: relative;
   width: 940px;
@@ -66,12 +67,13 @@ html, body {
   margin: 0 auto;
 }
 
+
 .top {
   @include gradient-horizontal($dawn-pink, $neptune, $cello, $port-gore);
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 25%;
+  bottom: 20%;
   left: 0;
   min-height: 500px;
   overflow: auto;
@@ -91,6 +93,7 @@ html, body {
       display: block;
       float: left;
       width: 146px;
+      margin-left: 5px;
       height: 23px;
       background: url(/images/logo.png) no-repeat center center;
       background-size: 146px 23px;
@@ -114,7 +117,7 @@ html, body {
         }
 
         a:hover {
-          text-decoration: underline;
+          opacity: 0.5
         }
       }
     }
@@ -140,15 +143,17 @@ html, body {
 
     .hero {
       position: absolute;
-      top: 5%;
-      right: 50%;
-      width: 350px;
+      top: 20%;
+      /*right: 50%;*/
+      width: 400px;
       margin: 0 120px 0 0;
       color: #fff;
 
       h1 {
         font-weight: normal;
         font-size: 36px;
+        line-height: 40px;
+        margin:10px 0;
       }
 
       p {
@@ -157,12 +162,12 @@ html, body {
       }
 
       .btns {
-        margin: 25px 0 0 0;
+        margin: 22px 0 0 0;
 
         button {
           color: #fff;
           font-size: 14px;
-          padding: 10px 15px;
+          padding: 10px 20px;
 
           &:first-child {
             margin-right: 25px;
@@ -171,6 +176,7 @@ html, body {
           &.launch {
             border: 0;
             border-radius: 40px;
+            margin-left: -6px;
             background-image: -o-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
             background-image: -moz-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
             background-image: -ms-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
@@ -184,6 +190,9 @@ html, body {
             background: url(/images/icon-manifesto.png) no-repeat center left;
             background-size: 19px 23px;
             padding-left: 30px;
+          }
+          &.manifesto:hover {
+          	opacity: 0.5
           }
         }
       }
@@ -206,8 +215,8 @@ html, body {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 25%;
-  min-height: 120px;
+  height: 20%;
+  min-height: 125px;
   background: #fff;
 
   .inner {
