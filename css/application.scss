@@ -144,7 +144,6 @@ html, body {
     .hero {
       position: absolute;
       top: 20%;
-      /*right: 50%;*/
       width: 400px;
       margin: 0 120px 0 0;
       color: #fff;
@@ -201,11 +200,20 @@ html, body {
     .devices {
       position: absolute;
       left: 50%;
-      width: 492px;
+      width: 525px;
       height: 384px;
-      background: url(/images/devices.png) no-repeat center center;
-      background-size: 492px 384px;
+      overflow: hidden;
+
+
+     	& span {
+     		display: inline-block;
+     		width: 525px;
+     		height: 644px;
+     		background: url(/images/devices.png) no-repeat center center;
+      		background-size: 525px 644px;
+     }
     }
+
   }
 }
 
