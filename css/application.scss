@@ -246,12 +246,14 @@ html, body {
           position: relative;
 
           .launch {
+            @include transition(width, .2s, ease-in);
             @include placeholder {
               color: #fff;
             }
 
             border: 0;
             cursor: pointer;
+            width: 125px;
 
             border-radius: 40px;
             background-image: -o-linear-gradient(-89deg, #5E8C98 0%, #76A7B3 100%);
