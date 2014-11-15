@@ -204,16 +204,14 @@ html, body {
       height: 384px;
       overflow: hidden;
 
-
-     	& span {
-     		display: inline-block;
-     		width: 525px;
-     		height: 644px;
-     		background: url(/images/devices.png) no-repeat center center;
-      		background-size: 525px 644px;
-     }
+      span {
+        display: inline-block;
+        width: 525px;
+        height: 644px;
+        background: url(/images/devices.png) no-repeat center center;
+        background-size: 525px 644px;
+      }
     }
-
   }
 }
 
