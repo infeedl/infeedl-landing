@@ -60,7 +60,9 @@ html, body {
 }
 
 .inner {
+  position: relative;
   width: 940px;
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -74,10 +76,16 @@ html, body {
   min-height: 500px;
   overflow: auto;
 
+  @media screen and (max-height: 500px) {
+    padding-bottom: 120px;
+  }
+
   .header {
     @include clearfix;
     position: absolute;
     top: 12%;
+    right: 0;
+    left: 0;
 
     .logo {
       display: block;
