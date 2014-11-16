@@ -408,8 +408,8 @@ html, body {
   .inner {
     @include transition(all, .4s, ease-in);
     position: absolute;
-    top: 100%;
-    bottom: 5%;
+    top: 105%;
+    bottom: -105%;
     left: 50%;
     width: 625px;
     height: auto;
@@ -420,6 +420,7 @@ html, body {
 
     &.shown {
       top: 5%;
+      bottom: 5%;
     }
 
     .close {
