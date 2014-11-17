@@ -129,7 +129,7 @@ html, body {
   .header {
     @include clearfix;
     position: absolute;
-    top: 12%;
+    top: 13%;
     right: 0;
     left: 0;
 
@@ -193,7 +193,7 @@ html, body {
 
     .hero {
       position: absolute;
-      top: 20%;
+      top: 22%;
       width: 400px;
       margin: 0 120px 0 0;
       color: #fff;
@@ -201,7 +201,7 @@ html, body {
       h1 {
         font-weight: normal;
         font-size: 36px;
-        line-height: 40px;
+        line-height: 42px;
         margin:10px 0;
       }
 
