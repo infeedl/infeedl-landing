@@ -24,6 +24,7 @@ $(document).on("focus", ".launch", ->
 complete = ->
   $("form").removeClass("focused").addClass("completed")
   $(".launch").val("").attr("disabled", true).attr("placeholder", $(".launch").data("complete-placeholder"))
+  Placeholders.enable()
 
 $(document).on("submit", "form", ->
   $.getJSON(
