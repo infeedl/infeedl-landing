@@ -258,6 +258,8 @@ html, body {
         }
 
         form {
+          -webkit-animation-duration: .5s;
+          animation-duration: .5s;
           display: inline-block;
           position: relative;
 
@@ -422,6 +424,9 @@ html, body {
 
   .inner {
     @include opacity(0);
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+
     position: absolute;
     top: 5%;
     bottom: 5%;
