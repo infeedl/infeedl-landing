@@ -4,15 +4,19 @@
 $(document).on("click", "button.manifesto", ->
   $(".overlay.manifesto").removeClass("hidden")
   setTimeout(->
-    $(".overlay.manifesto .inner").addClass("shown")
+    $(".overlay.manifesto .inner").addClass("animated zoomIn")
+    $(".overlay.manifesto .inner").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", ->
+      $(this).removeClass("animated zoomIn").css(opacity: 1)
+    )
   , 50)
 )
 
 $(document).on("click", ".overlay.manifesto .close", ->
-  $(".overlay.manifesto .inner").removeClass("shown")
-  setTimeout(->
+  $(".overlay.manifesto .inner").addClass("animated zoomOut")
+  $(".overlay.manifesto .inner").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", ->
+    $(this).removeClass("animated zoomOut").css(opacity: 0)
     $(".overlay.manifesto").addClass("hidden")
-  , 400)
+  )
 )
 
 $(document).on("focus", ".launch", ->
@@ -34,7 +38,10 @@ $(document).on("submit", "form", ->
       if data.Status.toString() == "200"
         complete()
       else
-        alert(data.Message)
+        $(".launch").parent().removeClass("animated shake")
+        setTimeout(->
+          $(".launch").parent().addClass("animated shake")
+        , 50)
   ).bind(this))
 
   false
