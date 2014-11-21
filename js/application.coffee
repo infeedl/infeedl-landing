@@ -1,6 +1,16 @@
 ---
 ---
 
+$(document).on("click", ".social a", ->
+  height = 305
+  width = 600
+  top = (screen.height / 2) - (height / 2)
+  left = (screen.width / 2) - (width / 2)
+
+  window.open($(this).attr("href"), "share", "status=1,height=#{height},width=#{width},top=#{top},left=#{left},resizable=0")
+  false
+)
+
 $(document).on("click", "button.manifesto", ->
   $(".overlay.manifesto").removeClass("hidden")
   setTimeout(->
@@ -28,6 +38,7 @@ $(document).on("focus", ".launch", ->
 complete = ->
   $("form").removeClass("focused").addClass("completed")
   $(".launch").val("").attr("disabled", true).attr("placeholder", $(".launch").data("complete-placeholder"))
+  $(".btns .social").css("display", "inline-block")
   Placeholders.enable()
 
 $(document).on("submit", "form", ->
