@@ -21,11 +21,8 @@ showOverlay = (klass) ->
   , 50)
 
 hideOverlay = (klass) ->
-  $(".overlay.#{klass} .inner").addClass("animated zoomOut")
-  $(".overlay.#{klass} .inner").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", ->
-    $(this).removeClass("animated zoomOut").css(opacity: 0)
-    $(".overlay.#{klass}").addClass("hidden")
-  )
+  $(".overlay.#{klass}").addClass("hidden")
+  $(".overlay.#{klass} .inner").css(opacity: 0)
 
 $(document).on("click", "button.manifesto", ->
   showOverlay("manifesto")

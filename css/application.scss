@@ -503,7 +503,7 @@ html, body {
       cursor: pointer;
 
       @media (min-width: $desktop-breakpoint) {
-        top: 0;
+        top: 5%;
         right: -50px;
         width: 26px;
         height: 27px;
@@ -603,7 +603,7 @@ html, body {
   }
 
   @media (max-width: $mobile-breakpoint) {
-    margin: 54px 0 27px 0;
+    margin: 45px 0 27px 0;
   }
 
   .launch, .manifesto {
