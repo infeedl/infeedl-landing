@@ -2,28 +2,14 @@
   <div class="inner">
     <div class="header">
       <a href="/" class="logo"></a>
-      <ul>
-        <li><a href="http://publisher.infeedl.com/">Издателям</a></li>
-        <li><a href="http://advertiser.infeedl.com/">Рекламодателям</a></li>
-        <li><a href="http://blog.infeedl.com/">Блог</a></li>
-      </ul>
-      <div class="like">
-        <span class="caption">Следите за новостями —</span>
-        <div class="fb-like" data-href="https://www.facebook.com/infeedl" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-      </div>
+      {% include menu.html %}
+      <button class="mobile-menu"></button>
     </div>
     <div class="content">
       <div class="hero">
         <h1>Новая, более лучшая реклама</h1>
         <p>Мы продвигаем брендированный контент через топовые интернет-издания. С любовью к дизайну и&nbsp;пользователю.</p>
-        <div class="btns">
-          <form>
-            <input class="launch" type="text" placeholder="Узнать о запуске" data-blur-placeholder="Узнать о запуске" data-focus-placeholder="Ваш email" data-complete-placeholder="Спасибо! Расскажите друзьям:" />
-            <button type="submit" class="submit"></button>
-          </form>
-          {% include social.html %}
-          <button class="manifesto">Наш манифест</button>
-        </div>
+        {% include btns.html %}
       </div>
       <div class="devices"><span></span></div>
     </div>
@@ -42,6 +28,15 @@
   </div>
 </section>
 
+<section class="deep-bottom">
+  <div class="inner">
+    {% include btns.html %}
+    <div class="like">
+      <div class="fb-like" data-href="https://www.facebook.com/infeedl" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+    </div>
+  </div>
+</section>
+
 <div class="overlay manifesto hidden">
   <div class="inner">
     <div class="close"></div>
@@ -54,6 +49,15 @@
       <p>INFEEDL&nbsp;&mdash; платформа для продвижения качественного брендированного контента. Клиенты слушают, говорите.</p>
 
       {% include social.html %}
+    </div>
+  </div>
+</div>
+
+<div class="overlay mobile-menu hidden">
+  <div class="inner">
+    <div class="close"></div>
+    <div class="contents">
+      {% include menu.html %}
     </div>
   </div>
 </div>

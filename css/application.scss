@@ -76,10 +76,11 @@ $cello: #1f4865;
 $neptune: #6fa2b0;
 $dawn-pink: #e9f5e6;
 $mystic: #dde7eb;
-
 $launch-left: #5E8C98;
 $launch-right: #76A7B3;
 
+$mobile-breakpoint: 959px;
+$desktop-breakpoint: 960px;
 $regular-font-size: 13px;
 
 @include keyframes(manifesto-button) {
@@ -110,7 +111,10 @@ $regular-font-size: 13px;
 }
 
 html, body {
-  @include gradient-background();
+  @media (min-width: $desktop-breakpoint) {
+    @include gradient-background();
+  }
+
   height: 100%;
   font-family: 'gotham_proregular';
 }
@@ -121,6 +125,10 @@ html, body {
   width: 940px;
   height: 100%;
   margin: 0 auto;
+
+  @media (max-width: $mobile-breakpoint) {
+    width: 100%;
+  }
 }
 
 .hidden {
@@ -129,25 +137,35 @@ html, body {
 
 .top {
   @include gradient-background();
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 20%;
-  left: 0;
-  min-height: 500px;
-  overflow: hidden;
 
-  @media screen and (max-height: 625px) {
+  @media (min-width: $desktop-breakpoint) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 20%;
+    left: 0;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  @media (max-height: 625px) {
     bottom: 0;
     padding-bottom: 125px;
   }
 
+  @media (max-width: $mobile-breakpoint) {
+    padding-bottom: 0;
+  }
+
   .header {
     @include clearfix;
-    position: absolute;
-    top: 13%;
-    right: 0;
-    left: 0;
+
+    @media (min-width: $desktop-breakpoint) {
+      position: absolute;
+      top: 13%;
+      right: 0;
+      left: 0;
+    }
 
     .logo {
       display: block;
@@ -157,6 +175,10 @@ html, body {
       height: 23px;
       background: url(/images/logo.png) no-repeat center center;
       background-size: 146px 23px;
+
+      @media (max-width: $mobile-breakpoint) {
+        margin: 36px 0 0 22px;
+      }
     }
 
     ul {
@@ -164,6 +186,10 @@ html, body {
       float: left;
       padding: 0;
       margin: 2px 0 0 32px;
+
+      @media (max-width: $mobile-breakpoint) {
+        display: none;
+      }
 
       li {
         display: inline-block;
@@ -188,6 +214,10 @@ html, body {
       display: block;
       float: right;
 
+      @media (max-width: $mobile-breakpoint) {
+        display: none;
+      }
+
       .caption {
         @include opacity(.5);
         display: inline-block;
@@ -198,138 +228,69 @@ html, body {
         vertical-align: top;
       }
     }
+
+    .mobile-menu {
+      @media (min-width: $desktop-breakpoint) {
+        display: none;
+      }
+
+      display: block;
+      float: right;
+      width: 24px;
+      height: 23px;
+      background: #fff;
+      border: 0;
+      margin: 36px 22px 0 0;
+      background: url(/images/mobile-menu.png) no-repeat center center;
+      background-size: 24px 23px;
+    }
   }
 
   .content {
-    position: absolute;
-    top: 26%;
-    right: 0;
-    left: 0;
-    height: 384px;
+    @media (min-width: $desktop-breakpoint) {
+      position: absolute;
+      top: 26%;
+      right: 0;
+      left: 0;
+      height: 384px;
+    }
 
     .hero {
-      position: absolute;
-      top: 22%;
-      width: 400px;
-      margin: 0 120px 0 0;
+      @media (min-width: $desktop-breakpoint) {
+        position: absolute;
+        top: 22%;
+        width: 400px;
+        margin: 0 120px 0 0;
+      }
+
+      @media (max-width: $mobile-breakpoint) {
+        width: 80%;
+        padding: 0 10%;
+        margin: 105px 0 0 0;
+        text-align: center;
+      }
+
       color: #fff;
 
       h1 {
         font-weight: normal;
         font-size: 36px;
         line-height: 42px;
-        margin:10px 0;
+        margin: 10px 0;
+
+        @media (max-width: $mobile-breakpoint) {
+          font-size: 28px;
+          line-height: 31px;
+        }
       }
 
       p {
         font-size: 15px;
         line-height: 22px;
-      }
 
-      .btns {
-        width: 120%;
-        margin: 22px 0 0 0;
-
-        .launch, .manifesto {
-          color: #fff;
+        @media (max-width: $mobile-breakpoint) {
           font-size: 14px;
-          padding: 10px 20px;
-
-          &:focus {
-            outline: 0;
-          }
-
-          &.manifesto {
-            @include animation('manifesto-button 4s infinite');
-            border: 0;
-            background: url(/images/icon-manifesto.png) no-repeat center left;
-            background-size: 19px 23px;
-            padding-left: 30px;
-
-            &:hover {
-              @include animation('none');
-              @include opacity(.6);
-            }
-          }
-        }
-
-        form {
-          -webkit-animation-duration: .5s;
-          animation-duration: .5s;
-          display: inline-block;
-          position: relative;
-          margin-right: 25px;
-
-          .launch {
-            @include transition(width, .2s, ease-in);
-            @include placeholder {
-              color: #fff;
-            }
-
-            border: 0;
-            cursor: pointer;
-            width: 125px;
-
-            @include gradient-launch();
-            border-radius: 40px;
-            -moz-box-shadow: 0px 1px 1px 0px rgba(255,255,255,0.17), inset 0px 1px 1px 0px rgba(0,0,0,0.10);
-            box-shadow: 0px 1px 1px 0px rgba(255,255,255,0.17), inset 0px 1px 1px 0px rgba(0,0,0,0.10);
-
-            &:hover {
-              @include placeholder {
-                @include transition(opacity, .2s, ease-in);
-                @include opacity(.6);
-              }
-            }
-          }
-
-          .submit {
-            display: none;
-            outline: 0;
-          }
-
-          &.focused {
-            .launch {
-              @include placeholder {
-                color: rgba(255, 255, 255, .4);
-              }
-
-              cursor: text;
-              width: 220px;
-              padding-right: 40px;
-            }
-
-            .submit {
-              display: block;
-              position: absolute;
-              top: 5px;
-              right: 7px;
-              width: 26px;
-              height: 26px;
-              border: 0;
-              background: url(/images/enter.png) no-repeat center center;
-              background-size: 26px 26px;
-            }
-          }
-
-          &.completed {
-            margin-right: 5px;
-            margin-bottom: 3px;
-
-            .launch {
-              background: none;
-              filter: none;
-              -moz-box-shadow: none;
-              box-shadow: none;
-              width: 220px;
-              padding-left: 0;
-              padding-right: 0;
-            }
-          }
-        }
-
-        .social {
-          display: none;
+          line-height: 20px;
         }
       }
     }
@@ -338,6 +299,10 @@ html, body {
       position: absolute;
       left: 50%;
       width: 525px;
+
+      @media (max-width: $mobile-breakpoint) {
+        display: none;
+      }
 
       span {
         display: inline-block;
@@ -352,20 +317,26 @@ html, body {
 
 .bottom {
   @include box-shadow(0, 1px, 3px, rgba(0, 0, 0, 29));
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 20%;
-  min-height: 125px;
+
+  @media (min-width: $desktop-breakpoint) {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 20%;
+    min-height: 125px;
+  }
+
   background: #fff;
 
   .inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -60px;
-    margin-left: -470px;
+    @media (min-width: $desktop-breakpoint) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -60px;
+      margin-left: -470px;
+    }
   }
 
   ul {
@@ -374,38 +345,84 @@ html, body {
     padding: 0;
     margin: 0;
 
+    @media (max-width: $mobile-breakpoint) {
+      margin-bottom: 20px;
+    }
+
     li {
+      @media (min-width: $desktop-breakpoint) {
+        float: left;
+        width: 20%;
+        height: 120px;
+      }
+
+      @media (max-width: $mobile-breakpoint) {
+        height: 180px;
+      }
+
       display: block;
-      float: left;
       position: relative;
       padding: 0;
       margin: 0;
-      width: 20%;
-      height: 120px;
 
       &.icon01 {
-        background: url(/images/icon01.png) no-repeat center 20%;
-        background-size: 67px 58px;
+        @media (min-width: $desktop-breakpoint) {
+          background: url(/images/icon01.png) no-repeat center 20%;
+          background-size: 67px 58px;
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+          background: url(/images/icon01-mobile.png) no-repeat center 30%;
+          background-size: 90px 78px;
+        }
       }
 
       &.icon02 {
-        background: url(/images/icon02.png) no-repeat center 20%;
-        background-size: 57px 66px;
+        @media (min-width: $desktop-breakpoint) {
+          background: url(/images/icon02.png) no-repeat center 20%;
+          background-size: 57px 66px;
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+          background: url(/images/icon02-mobile.png) no-repeat center 30%;
+          background-size: 75px 87px;
+        }
       }
 
       &.icon03 {
-        background: url(/images/icon03.png) no-repeat center 20%;
-        background-size: 51px 61px;
+        @media (min-width: $desktop-breakpoint) {
+          background: url(/images/icon03.png) no-repeat center 20%;
+          background-size: 51px 61px;
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+          background: url(/images/icon03-mobile.png) no-repeat center 30%;
+          background-size: 70px 86px;
+        }
       }
 
       &.icon04 {
-        background: url(/images/icon04.png) no-repeat center 20%;
-        background-size: 106px 59px;
+        @media (min-width: $desktop-breakpoint) {
+          background: url(/images/icon04.png) no-repeat center 20%;
+          background-size: 106px 59px;
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+          background: url(/images/icon04-mobile.png) no-repeat center 30%;
+          background-size: 130px 74px;
+        }
       }
 
       &.icon05 {
-        background: url(/images/icon05.png) no-repeat center 20%;
-        background-size: 66px 60px;
+        @media (min-width: $desktop-breakpoint) {
+          background: url(/images/icon05.png) no-repeat center 20%;
+          background-size: 66px 60px;
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+          background: url(/images/icon05-mobile.png) no-repeat center 30%;
+          background-size: 90px 82px;
+        }
       }
 
       span {
@@ -416,7 +433,33 @@ html, body {
         text-align: center;
         margin-top: 4px;
         font-size: $regular-font-size;
+
+        @media (max-width: $mobile-breakpoint) {
+          font-size: 16px;
+          top: 130px;
+          width: 80%;
+          padding: 0 10%;
+        }
       }
+    }
+  }
+}
+
+.deep-bottom {
+  @media (min-width: $desktop-breakpoint) {
+    display: none;
+  }
+
+  @include gradient-background();
+  text-align: center;
+
+  .inner {
+    padding: 40px 10% 22px 10%;
+    width: 80%;
+
+    .btns {
+      margin-top: 0;
+      margin-bottom: 16px;
     }
   }
 }
@@ -435,31 +478,57 @@ html, body {
     animation-duration: .5s;
 
     position: absolute;
-    top: 5%;
-    bottom: 5%;
-    left: 50%;
-    width: 625px;
-    height: auto;
-    margin-left: -312px;
-    padding: 20px 0;
     background: #000;
     color: #fff;
 
+    @media (min-width: $desktop-breakpoint) {
+      top: 5%;
+      bottom: 5%;
+      left: 50%;
+      width: 625px;
+      height: auto;
+      padding: 20px 0;
+      margin-left: -312px;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
     .close {
       position: absolute;
-      top: 0;
-      right: -50px;
-      width: 26px;
-      height: 27px;
-      background: url(/images/close.png) no-repeat center center;
-      background-size: 26px 27px;
       cursor: pointer;
+
+      @media (min-width: $desktop-breakpoint) {
+        top: 0;
+        right: -50px;
+        width: 26px;
+        height: 27px;
+        background: url(/images/close.png) no-repeat center center;
+        background-size: 26px 27px;
+      }
+
+      @media (max-width: $mobile-breakpoint) {
+        top: 22px;
+        right: 12px;
+        width: 24px;
+        height: 23px;
+        background: url(/images/close-mobile.png) no-repeat center center;
+        background-size: 24px 23px;
+      }
     }
 
     .contents {
       height: 100%;
       overflow: auto;
+    }
+  }
 
+  &.manifesto {
+    .contents {
       h1 {
         margin: 50px 0 30px 0;
         text-align: center;
@@ -476,8 +545,185 @@ html, body {
       .social {
         width: 100%;
         text-align: center;
+
+        @media (max-width: $mobile-breakpoint) {
+          padding-bottom: 20px;
+        }
       }
     }
+  }
+
+  &.mobile-menu {
+    .contents {
+      ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -75px 0 0 -80px;
+        padding: 0;
+        text-align: center;
+
+        li {
+          display: block;
+          margin: 0 0 32px 0;
+
+          a {
+            color: #fff;
+            font-size: 19px;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .like {
+        position: absolute;
+        bottom: 40px;
+        width: 100%;
+        text-align: center;
+
+        .caption {
+          display: block;
+          margin: 0 0 12px 0;
+          font-size: 15px;
+          color: rgba(255, 255, 255, .4);
+        }
+      }
+    }
+  }
+}
+
+.btns {
+  @media (min-width: $desktop-breakpoint) {
+    width: 120%;
+    margin: 22px 0 0 0;
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    margin: 54px 0 27px 0;
+  }
+
+  .launch, .manifesto {
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 20px;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &.manifesto {
+      @include animation('manifesto-button 4s infinite');
+      border: 0;
+      background: url(/images/icon-manifesto.png) no-repeat center left;
+      background-size: 19px 23px;
+      padding-left: 30px;
+
+      &:hover {
+        @include animation('none');
+        @include opacity(.6);
+      }
+
+      @media (max-width: $mobile-breakpoint) {
+        margin-top: 15px;
+        padding-right: 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  form {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    display: inline-block;
+    position: relative;
+
+    @media (min-width: $desktop-breakpoint) {
+      margin-right: 25px;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+      display: block;
+    }
+
+    .launch {
+      @include transition(width, .2s, ease-in);
+      @include placeholder {
+        color: #fff;
+      }
+
+      border: 0;
+      cursor: pointer;
+      width: 125px;
+
+      @include gradient-launch();
+      border-radius: 40px;
+      -moz-box-shadow: 0px 1px 1px 0px rgba(255,255,255,0.17), inset 0px 1px 1px 0px rgba(0,0,0,0.10);
+      box-shadow: 0px 1px 1px 0px rgba(255,255,255,0.17), inset 0px 1px 1px 0px rgba(0,0,0,0.10);
+
+      &:hover {
+        @include placeholder {
+          @include transition(opacity, .2s, ease-in);
+          @include opacity(.6);
+        }
+      }
+    }
+
+    .submit {
+      display: none;
+      outline: 0;
+    }
+
+    &.focused {
+      .launch {
+        box-sizing: border-box;
+
+        @include placeholder {
+          color: rgba(255, 255, 255, .4);
+        }
+
+        cursor: text;
+
+        @media (min-width: $desktop-breakpoint) {
+          width: 220px;
+          padding-right: 40px;
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+          width: 100%;
+        }
+      }
+
+      .submit {
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 7px;
+        width: 26px;
+        height: 26px;
+        border: 0;
+        background: url(/images/enter.png) no-repeat center center;
+        background-size: 26px 26px;
+      }
+    }
+
+    &.completed {
+      margin-right: 5px;
+      margin-bottom: 3px;
+
+      .launch {
+        background: none;
+        filter: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: 220px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  .social {
+    display: none;
   }
 }
 

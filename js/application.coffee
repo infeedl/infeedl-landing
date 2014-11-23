@@ -11,22 +11,36 @@ $(document).on("click", ".social a", ->
   false
 )
 
-$(document).on("click", "button.manifesto", ->
-  $(".overlay.manifesto").removeClass("hidden")
+showOverlay = (klass) ->
+  $(".overlay.#{klass}").removeClass("hidden")
   setTimeout(->
-    $(".overlay.manifesto .inner").addClass("animated zoomIn")
-    $(".overlay.manifesto .inner").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", ->
+    $(".overlay.#{klass} .inner").addClass("animated zoomIn")
+    $(".overlay.#{klass} .inner").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", ->
       $(this).removeClass("animated zoomIn").css(opacity: 1)
     )
   , 50)
+
+hideOverlay = (klass) ->
+  $(".overlay.#{klass} .inner").addClass("animated zoomOut")
+  $(".overlay.#{klass} .inner").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", ->
+    $(this).removeClass("animated zoomOut").css(opacity: 0)
+    $(".overlay.#{klass}").addClass("hidden")
+  )
+
+$(document).on("click", "button.manifesto", ->
+  showOverlay("manifesto")
 )
 
 $(document).on("click", ".overlay.manifesto .close", ->
-  $(".overlay.manifesto .inner").addClass("animated zoomOut")
-  $(".overlay.manifesto .inner").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", ->
-    $(this).removeClass("animated zoomOut").css(opacity: 0)
-    $(".overlay.manifesto").addClass("hidden")
-  )
+  hideOverlay("manifesto")
+)
+
+$(document).on("click", "button.mobile-menu", ->
+  showOverlay("mobile-menu")
+)
+
+$(document).on("click", ".overlay.mobile-menu .close", ->
+  hideOverlay("mobile-menu")
 )
 
 $(document).on("focus", ".launch", ->
@@ -44,7 +58,7 @@ complete = ->
 $(document).on("submit", "form", ->
   $.getJSON(
     "http://infeedl.createsend.com/t/t/s/dttytu/?callback=?"
-    { "cm-dttytu-dttytu": $(".launch").val() }
+    { "cm-dttytu-dttytu": $(this).find(".launch").val() }
     ((data) ->
       if data.Status.toString() == "200"
         complete()
