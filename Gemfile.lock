@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/adaoraul/rack-jekyll.git
-  revision: f5064cd72daee87eaf87bb838453af3caebee536
+  remote: git://github.com/krasnoukhov/rack-jekyll.git
+  revision: d7ff7eccbf25a8d623638e84864530a5c85973cd
   specs:
     rack-jekyll (0.4.1)
       jekyll (>= 1.3)
@@ -23,7 +23,7 @@ GEM
     fast-stemmer (1.0.2)
     ffi (1.9.6)
     hitimes (1.2.2)
-    jekyll (2.5.1)
+    jekyll (2.5.2)
       classifier-reborn (~> 2.0)
       colorator (~> 0.1)
       jekyll-coffeescript (~> 1.0)
@@ -48,7 +48,7 @@ GEM
       listen (~> 2.7)
     kramdown (1.5.0)
     liquid (2.6.1)
-    listen (2.7.12)
+    listen (2.8.1)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -66,7 +66,7 @@ GEM
       ffi (>= 0.5.0)
     redcarpet (3.2.0)
     safe_yaml (1.0.4)
-    sass (3.4.7)
+    sass (3.4.8)
     timers (4.0.1)
       hitimes
     toml (0.1.2)

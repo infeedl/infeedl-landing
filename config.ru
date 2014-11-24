@@ -1,4 +1,4 @@
-require "yaml"
-require "rack/jekyll"
+require "bundler"
+Bundler.require
 
-run Rack::Jekyll.new
+run Rack::Jekyll.new(auto: true)
