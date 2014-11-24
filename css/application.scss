@@ -111,14 +111,15 @@ $regular-font-size: 13px;
 }
 
 html, body {
-  @media (min-width: $desktop-breakpoint) {
-    @include gradient-background();
-  }
-
   height: 100%;
   font-family: 'gotham_proregular';
 }
 
+body.default {
+  @media (min-width: $desktop-breakpoint) {
+    @include gradient-background();
+  }
+}
 
 .inner {
   position: relative;
@@ -769,13 +770,6 @@ html, body {
 }
 
 .subscribe {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: #fff;
-
   .btns {
     position: absolute;
     top: 50%;
@@ -786,6 +780,12 @@ html, body {
 
     form {
       margin: 0;
+
+      &.completed {
+        .launch {
+          width: 240px;
+        }
+      }
     }
   }
 }
