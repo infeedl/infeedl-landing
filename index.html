@@ -2,4 +2,66 @@
 layout: default
 ---
 
-{% include index.html %}
+<section class="top">
+  <div class="inner">
+    <div class="header">
+      <a href="/" class="logo"></a>
+      {% include menu.html %}
+      <button class="mobile-menu"></button>
+    </div>
+    <div class="content">
+      <div class="hero">
+        <h1>Новая, более лучшая реклама</h1>
+        <p>Мы продвигаем брендированный контент через топовые интернет-издания. С любовью к дизайну и&nbsp;пользователю.</p>
+        {% include btns.html %}
+      </div>
+      <div class="devices"><span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bottom">
+  <div class="inner">
+    <ul>
+      <li class="icon01"><span>До 8 раз эффективнее баннерки</span></li>
+      <li class="icon02"><span>Проверка качества контента</span></li>
+      <li class="icon03"><span>Без «джинсы»</span></li>
+      <li class="icon04"><span>Продвижение текста, видео, инфографики</span></li>
+      <li class="icon05"><span>Поддержка смартфонов и&nbsp;планшетов</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="deep-bottom">
+  <div class="inner">
+    {% include btns.html %}
+    <div class="like">
+      <div class="fb-like" data-href="https://www.facebook.com/infeedl" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+    </div>
+  </div>
+</section>
+
+<div class="overlay manifesto hidden">
+  <div class="inner">
+    <div class="close"></div>
+    <div class="contents">
+      <h1>Манифест</h1>
+
+      <p>Интернет стал для нас вторым домом, и&nbsp;это самый грязный дом в&nbsp;мире. Наш и&nbsp;одновременно ничейный&nbsp;&mdash; он&nbsp;превращен в&nbsp;свалку. Некрасиво&nbsp;&mdash; можно пережить, но&nbsp;стало очень неудобно. Цифровое пространство покрыто липким слоем навязчивой, ненужной рекламы.</p>
+      <p>Алчность площадок, неразборчивость пользователей, безвкусие рекламодателей&nbsp;&mdash; на&nbsp;каждом лежит часть вины. Каяться поздно, надо спасаться. Если не&nbsp;начать уборку сегодня, рынок сделает жесткую зачистку завтра. Баннеры теряют эффективность, площадки&nbsp;&mdash; аудиторию. Будем менять рекламу или отменять?</p>
+      <p>Вы&nbsp;всё еще читаете этот текст, потому что любите истории. В&nbsp;этом будущее рекламы. Бренд становится потребителю другом, говорит доверительно и&nbsp;на&nbsp;интересные обоим темы. Придумайте историю о&nbsp;своем продукте, а&nbsp;мы&nbsp;дадим возможность ее&nbsp;услышать.</p>
+      <p>INFEEDL&nbsp;&mdash; платформа для продвижения качественного брендированного контента. Клиенты слушают, говорите.</p>
+
+      {% include social.html %}
+    </div>
+  </div>
+</div>
+
+<div class="overlay mobile-menu hidden">
+  <div class="inner">
+    <div class="close"></div>
+    <div class="contents">
+      {% include menu.html %}
+    </div>
+  </div>
+</div>
