@@ -54,7 +54,7 @@ complete = ->
 
 $(document).on("submit", "form", ->
   $.getJSON(
-    "http://infeedl.createsend.com/t/t/s/dttytu/?callback=?"
+    "//infeedl.createsend.com/t/t/s/dttytu/?callback=?"
     { "cm-dttytu-dttytu": $(this).find(".launch").val() }
     ((data) ->
       if data.Status.toString() == "200"
