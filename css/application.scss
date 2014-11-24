@@ -2,12 +2,12 @@
 ---
 
 @font-face {
-  font-family: 'gotham_proregular';
-  src: url('/vendor/fonts/gothaproreg-webfont.eot');
-  src: url('/vendor/fonts/gothaproreg-webfont.eot?#iefix') format('embedded-opentype'),
-       url('/vendor/fonts/gothaproreg-webfont.woff2') format('woff2'),
-       url('/vendor/fonts/gothaproreg-webfont.woff') format('woff'),
-       url('/vendor/fonts/gothaproreg-webfont.ttf') format('truetype');
+  font-family: "gotham_proregular";
+  src: url("../vendor/fonts/gothaproreg-webfont.eot");
+  src: url("../vendor/fonts/gothaproreg-webfont.eot?#iefix") format("embedded-opentype"),
+       url("../vendor/fonts/gothaproreg-webfont.woff2") format("woff2"),
+       url("../vendor/fonts/gothaproreg-webfont.woff") format("woff"),
+       url("../vendor/fonts/gothaproreg-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -32,7 +32,7 @@
 
 @mixin clearfix {
   &:after {
-    content: '';
+    content: "";
     display: table;
     clear: both;
   }
@@ -97,7 +97,7 @@ $regular-font-size: 13px;
   background: -o-linear-gradient(45deg,  #e9f5e6  0%,#6fa2b0  30%,#1f4865  74%,#1f1a40  100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(45deg,  #e9f5e6  0%,#6fa2b0  30%,#1f4865  74%,#1f1a40  100%); /* IE10+ */
   background: linear-gradient(45deg,  #e9f5e6  0%,#6fa2b0  30%,#1f4865  74%,#1f1a40  100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9f5e6 ', endColorstr='#1f1a40 ',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#e9f5e6 ", endColorstr="#1f1a40 ",GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 @mixin gradient-launch() {
@@ -112,7 +112,7 @@ $regular-font-size: 13px;
 
 html, body {
   height: 100%;
-  font-family: 'gotham_proregular';
+  font-family: "gotham_proregular";
 }
 
 body.default {
@@ -617,14 +617,14 @@ body.default {
     }
 
     &.manifesto {
-      @include animation('manifesto-button 4s infinite');
+      @include animation("manifesto-button 4s infinite");
       border: 0;
       background: url(/images/icon-manifesto.png) no-repeat center left;
       background-size: 19px 23px;
       padding-left: 30px;
 
       &:hover {
-        @include animation('none');
+        @include animation("none");
         @include opacity(.6);
       }
 
