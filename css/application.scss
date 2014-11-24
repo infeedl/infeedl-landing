@@ -790,6 +790,8 @@ body.default {
 
       &.completed {
         .launch {
+          background: none;
+          filter: none;
           width: 240px;
         }
       }
