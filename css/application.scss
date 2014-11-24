@@ -174,7 +174,7 @@ body.default {
       width: 146px;
       margin-left: 5px;
       height: 23px;
-      background: url(/images/logo.png) no-repeat center center;
+      background: url(../images/logo.png) no-repeat center center;
       background-size: 146px 23px;
 
       @media (max-width: $mobile-breakpoint) {
@@ -242,7 +242,7 @@ body.default {
       background: #fff;
       border: 0;
       margin: 38px 22px 0 0;
-      background: url(/images/mobile-menu.png) no-repeat center center;
+      background: url(../images/mobile-menu.png) no-repeat center center;
       background-size: 24px 19px;
     }
   }
@@ -309,7 +309,7 @@ body.default {
         display: inline-block;
         width: 525px;
         height: 644px;
-        background: url(/images/devices.png) no-repeat center center;
+        background: url(../images/devices.png) no-repeat center center;
         background-size: 525px 644px;
       }
     }
@@ -368,60 +368,60 @@ body.default {
 
       &.icon01 {
         @media (min-width: $desktop-breakpoint) {
-          background: url(/images/icon01.png) no-repeat center 20%;
+          background: url(../images/icon01.png) no-repeat center 20%;
           background-size: 67px 58px;
         }
 
         @media (max-width: $mobile-breakpoint) {
-          background: url(/images/icon01-mobile.png) no-repeat center 30%;
+          background: url(../images/icon01-mobile.png) no-repeat center 30%;
           background-size: 90px 78px;
         }
       }
 
       &.icon02 {
         @media (min-width: $desktop-breakpoint) {
-          background: url(/images/icon02.png) no-repeat center 20%;
+          background: url(../images/icon02.png) no-repeat center 20%;
           background-size: 57px 66px;
         }
 
         @media (max-width: $mobile-breakpoint) {
-          background: url(/images/icon02-mobile.png) no-repeat center 30%;
+          background: url(../images/icon02-mobile.png) no-repeat center 30%;
           background-size: 75px 87px;
         }
       }
 
       &.icon03 {
         @media (min-width: $desktop-breakpoint) {
-          background: url(/images/icon03.png) no-repeat center 20%;
+          background: url(../images/icon03.png) no-repeat center 20%;
           background-size: 51px 61px;
         }
 
         @media (max-width: $mobile-breakpoint) {
-          background: url(/images/icon03-mobile.png) no-repeat center 30%;
+          background: url(../images/icon03-mobile.png) no-repeat center 30%;
           background-size: 70px 86px;
         }
       }
 
       &.icon04 {
         @media (min-width: $desktop-breakpoint) {
-          background: url(/images/icon04.png) no-repeat center 20%;
+          background: url(../images/icon04.png) no-repeat center 20%;
           background-size: 106px 59px;
         }
 
         @media (max-width: $mobile-breakpoint) {
-          background: url(/images/icon04-mobile.png) no-repeat center 30%;
+          background: url(../images/icon04-mobile.png) no-repeat center 30%;
           background-size: 130px 74px;
         }
       }
 
       &.icon05 {
         @media (min-width: $desktop-breakpoint) {
-          background: url(/images/icon05.png) no-repeat center 20%;
+          background: url(../images/icon05.png) no-repeat center 20%;
           background-size: 66px 60px;
         }
 
         @media (max-width: $mobile-breakpoint) {
-          background: url(/images/icon05-mobile.png) no-repeat center 30%;
+          background: url(../images/icon05-mobile.png) no-repeat center 30%;
           background-size: 90px 82px;
         }
       }
@@ -508,7 +508,7 @@ body.default {
         right: -50px;
         width: 26px;
         height: 27px;
-        background: url(/images/close.png) no-repeat center center;
+        background: url(../images/close.png) no-repeat center center;
         background-size: 26px 27px;
       }
 
@@ -517,7 +517,7 @@ body.default {
         right: 12px;
         width: 24px;
         height: 23px;
-        background: url(/images/close-mobile.png) no-repeat center center;
+        background: url(../images/close-mobile.png) no-repeat center center;
         background-size: 24px 23px;
       }
     }
@@ -619,7 +619,7 @@ body.default {
     &.manifesto {
       @include animation("manifesto-button 4s infinite");
       border: 0;
-      background: url(/images/icon-manifesto.png) no-repeat center left;
+      background: url(../images/icon-manifesto.png) no-repeat center left;
       background-size: 19px 23px;
       padding-left: 30px;
 
@@ -706,7 +706,7 @@ body.default {
         width: 26px;
         height: 26px;
         border: 0;
-        background: url(/images/enter.png) no-repeat center center;
+        background: url(../images/enter.png) no-repeat center center;
         background-size: 26px 26px;
       }
     }
@@ -753,17 +753,17 @@ body.default {
     }
 
     &.facebook {
-      background: url(/images/icon-facebook.png) no-repeat center center;
+      background: url(../images/icon-facebook.png) no-repeat center center;
       background-size: 33px 33px;
     }
 
     &.twitter {
-      background: url(/images/icon-twitter.png) no-repeat center center;
+      background: url(../images/icon-twitter.png) no-repeat center center;
       background-size: 33px 33px;
     }
 
     &.vk {
-      background: url(/images/icon-vk.png) no-repeat center center;
+      background: url(../images/icon-vk.png) no-repeat center center;
       background-size: 33px 33px;
     }
   }
