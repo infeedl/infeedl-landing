@@ -8,7 +8,7 @@
 
 <meta property="og:title" content="{{ site.og_title }}" />
 <meta property="og:description" content="{{ site.og_description }}" />
-<meta property="og:url" content="{{ site.og_url }}" />
+<meta property="og:url" content="{{ site.og_url }}{{ page.url | replace: "index.html", "" }}" />
 <meta property="og:image" content="{{ site.og_url }}/images/logo-icon.png" />
 <meta property="og:type" content="website" />
 <meta property="fb:admins" content="1315135311" />
