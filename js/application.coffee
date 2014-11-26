@@ -25,10 +25,16 @@ hideOverlay = (klass) ->
   $(".overlay.#{klass} .inner").css(opacity: 0)
 
 $(document).on("click", "button.manifesto", ->
+  if history.pushState
+    history.pushState({ id: "manifesto" }, "", "/manifesto.html");
+
   showOverlay("manifesto")
 )
 
 $(document).on("click", ".overlay.manifesto .close", ->
+  if history.pushState
+    history.pushState({ id: "home" }, "", "/")
+
   hideOverlay("manifesto")
 )
 
