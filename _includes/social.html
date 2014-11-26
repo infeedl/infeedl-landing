@@ -1,5 +1,5 @@
 <div class="social">
-  <a class="icon facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ site.og_url | cgi_escape }}"></a>
-  <a class="icon twitter" target="_blank" href="https://twitter.com/intent/tweet?text={{ site.og_title | cgi_escape }}&url={{ site.og_url | cgi_escape }}"></a>
-  <a class="icon vk" target="_blank" href="https://vk.com/share.php?url={{ site.og_url | cgi_escape }}"></a>
+  <a class="icon facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ site.og_url | cgi_escape }}{{ include.path }}"></a>
+  <a class="icon twitter" target="_blank" href="https://twitter.com/intent/tweet?text={{ site.og_title | cgi_escape }}&url={{ site.og_url | cgi_escape }}{{ include.path }}"></a>
+  <a class="icon vk" target="_blank" href="https://vk.com/share.php?url={{ site.og_url | cgi_escape }}{{ include.path }}"></a>
 </div>

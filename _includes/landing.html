@@ -1,0 +1,47 @@
+<section class="top">
+  <div class="inner">
+    <div class="header">
+      <a href="/" class="logo"></a>
+      {% include menu.html %}
+      <button class="mobile-menu"></button>
+    </div>
+    <div class="content">
+      <div class="hero">
+        <h1>Расскажите свою историю</h1>
+        <p>Продвижение брендированного контента через топовые интернет-издания. С любовью к дизайну и пользователю.</p>
+        {% include btns.html %}
+      </div>
+      <div class="devices"><span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bottom">
+  <div class="inner">
+    <ul>
+      <li class="icon01"><span>До 8 раз эффективнее баннерки</span></li>
+      <li class="icon02"><span>Проверка качества контента</span></li>
+      <li class="icon03"><span>Без «джинсы»</span></li>
+      <li class="icon04"><span>Продвижение текста, видео, инфографики</span></li>
+      <li class="icon05"><span>Поддержка смартфонов и&nbsp;планшетов</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="deep-bottom">
+  <div class="inner">
+    {% include btns.html %}
+    <div class="like">
+      <div class="fb-like" data-href="https://www.facebook.com/infeedl" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+    </div>
+  </div>
+</section>
+
+<div class="overlay mobile-menu hidden">
+  <div class="inner">
+    <div class="close"></div>
+    <div class="contents">
+      {% include menu.html %}
+    </div>
+  </div>
+</div>

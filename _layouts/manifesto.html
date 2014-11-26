@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% include head.html %}
+</head>
+<body class="default">
+  {{ content }}
+  {% include scripts.html %}
+  <script>
+    $(function() { $("button.manifesto").click() })
+  </script>
+</body>
+</html>
