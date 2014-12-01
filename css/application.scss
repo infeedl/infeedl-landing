@@ -114,6 +114,7 @@ $regular-font-size: 13px;
 html, body {
   height: 100%;
   font-family: "gotham_proregular";
+  -webkit-font-smoothing: antialiased;
 }
 
 body.default {
