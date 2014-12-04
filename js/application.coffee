@@ -74,3 +74,7 @@ $(document).on("submit", "form", ->
 
   false
 )
+
+$(window).on("popstate", ->
+  location.reload()
+)
