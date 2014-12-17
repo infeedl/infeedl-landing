@@ -799,6 +799,32 @@ body.default {
           width: 240px;
         }
       }
+
+      &.for-blog {
+        .launch {
+          @include gradient-launch(#fff, #fff);
+          @include placeholder {
+            color: rgba(0, 0, 0, .3);
+          }
+
+          color: rgba(0, 0, 0, .8);
+          border: 1px solid rgba(0, 0, 0, .1);
+        }
+
+        .submit {
+          background: url(../images/blog-enter.png) no-repeat center center;
+          background-size: 26px 26px;
+        }
+
+        &.completed {
+          .launch {
+            @include placeholder {
+              color: rgba(0, 0, 0, .3) !important;
+            }
+            border: 0;
+          }
+        }
+      }
     }
   }
 }
