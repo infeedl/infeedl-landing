@@ -52,6 +52,9 @@ $(document).on("focus", ".launch", ->
   $(this).attr("placeholder", $(this).data("focus-placeholder"))
 )
 
+$ ->
+  $('input, textarea').placeholder()
+
 complete = ->
   $("form").removeClass("focused").addClass("completed")
   $(".launch").val("").attr("disabled", true).attr("placeholder", $(".launch").data("complete-placeholder"))
