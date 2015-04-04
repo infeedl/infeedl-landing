@@ -126,7 +126,7 @@ $regular-font-size: 15px;
 
 html, body {
   height: 100%;
-  font-family: "AvenirNextCyr-Regular";
+  font-family: "AvenirNextCyr-Regular", Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -286,7 +286,7 @@ body.default {
     .hero {
       @media (min-width: $desktop-breakpoint) {
         position: absolute;
-        top: 22%;
+        top: 19%;
         width: 400px;
         margin: 0 120px 0 0;
       }
