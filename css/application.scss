@@ -1,7 +1,7 @@
 ---
 ---
 
-@font-face {
+/*@font-face {
   font-family: "gotham_proregular";
   src: url("../vendor/fonts/gothaproreg-webfont.eot");
   src: url("../vendor/fonts/gothaproreg-webfont.eot?#iefix") format("embedded-opentype"),
@@ -9,7 +9,20 @@
        url("../vendor/fonts/gothaproreg-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}*/
+
+
+@font-face {
+  font-family: 'AvenirNextCyr-Regular';
+  src: url('AvenirNextCyr-Regular.eot?#iefix') format('embedded-opentype'),  url('AvenirNextCyr-Regular.otf')  format('opentype'),
+	     url('AvenirNextCyr-Regular.woff') format('woff'), url('AvenirNextCyr-Regular.ttf')  format('truetype'), url('AvenirNextCyr-Regular.svg#AvenirNextCyr-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
+
+
+
+
 
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
@@ -82,7 +95,7 @@ $subscribe-launch-right: #61B0C2;
 
 $mobile-breakpoint: 959px;
 $desktop-breakpoint: 960px;
-$regular-font-size: 13px;
+$regular-font-size: 15px;
 
 @include keyframes(manifesto-button) {
   0% { @include opacity(1); }
@@ -113,7 +126,7 @@ $regular-font-size: 13px;
 
 html, body {
   height: 100%;
-  font-family: "gotham_proregular";
+  font-family: "AvenirNextCyr-Regular";
   -webkit-font-smoothing: antialiased;
 }
 
@@ -173,11 +186,11 @@ body.default {
     .logo {
       display: block;
       float: left;
-      width: 146px;
+      width: 160px;
       margin-left: 5px;
-      height: 23px;
-      background: url(../images/logo.png) no-repeat center center;
-      background-size: 146px 23px;
+      height: 26px;
+      background: url(../images/logo.svg);
+      background-size: 160px 26px;
 
       @media (max-width: $mobile-breakpoint) {
         margin: 36px 0 0 22px;
@@ -199,15 +212,18 @@ body.default {
         font-size: $regular-font-size;
         margin: 0 22px 0 0;
 
-        a, a:hover, a:active {
+        a, a:hover, a:active, button, button:hover {
           @include opacity(.9);
           @include transition(opacity, .4s, ease-in);
 
           color: $mystic;
+          border: 0;
           text-decoration: none;
+          display:inline;
+          background:none;
         }
 
-        a:hover {
+        a:hover, button:hover {
           @include opacity(.5);
         }
       }
@@ -219,6 +235,15 @@ body.default {
 
       @media (max-width: $mobile-breakpoint) {
         display: none;
+      }
+      @media (min-width: $desktop-breakpoint) {
+        position:relative;
+        padding-right:54px;
+        .fb-like{
+            position:absolute;
+            top:3px;
+            right:0;
+        }
       }
 
       .caption {
@@ -277,23 +302,57 @@ body.default {
 
       h1 {
         font-weight: normal;
-        font-size: 36px;
-        line-height: 42px;
+        font-size: 38px;
+        line-height: 46px;
         margin: 10px 0;
 
         @media (max-width: $mobile-breakpoint) {
-          font-size: 28px;
-          line-height: 31px;
+          font-size: 32px;
+          line-height: 40px;
         }
       }
 
       p {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 22px;
 
         @media (max-width: $mobile-breakpoint) {
-          font-size: 14px;
-          line-height: 20px;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+      .launch{
+        color:#FFF;
+        margin-top:20px;
+        margin-bottom:40px;
+        padding: 16px 40px 16px 18px;
+        background:rgba(0, 0, 0, .2);
+        border-radius:5px;
+
+        .yellow{
+          color:#FF0;
+        }
+
+        a{
+          color:#FF0;
+          display: inline-block;
+          border-bottom: 1px solid rgba(255, 255, 0, .4);
+          -webkit-transition:all .6s ease;
+          text-decoration:none;
+          &:hover{
+            color:#8CCBDC;
+            border-bottom: 1px solid rgba(140, 203, 220, .4);
+            -webkit-transition:all .2s ease;
+          }
+        }
+      }
+      .like{
+        display:none;
+
+
+        @media (max-width: $mobile-breakpoint) {
+          display:block;
+          margin-bottom:40px;
         }
       }
     }
@@ -473,7 +532,31 @@ body.default {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, .7);
+  background: rgba(0, 0, 0, .95);
+
+  .close {
+    position: absolute;
+    cursor: pointer;
+    z-index:2;
+
+    @media (min-width: $desktop-breakpoint) {
+      top: 7%;
+      right: 5%;
+      width: 26px;
+      height: 27px;
+      background: url(../images/close.png) no-repeat center center;
+      background-size: 26px 27px;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+      top: 22px;
+      right: 12px;
+      width: 24px;
+      height: 23px;
+      background: url(../images/close-mobile.png) no-repeat center center;
+      background-size: 24px 23px;
+    }
+  }
 
   .inner {
     @include opacity(0);
@@ -481,48 +564,29 @@ body.default {
     animation-duration: .5s;
 
     position: absolute;
-    background: #000;
     color: #fff;
 
     @media (min-width: $desktop-breakpoint) {
-      top: 0%;
+      top: 5%;
       bottom: 0%;
-      left: 50%;
-      width: 625px;
+      left:0%;
+      width:100%;
       height: auto;
       padding: 20px 0;
-      margin-left: -312px;
+      width:700px;
+      left:50%;
+      margin-left:-350px;
     }
 
     @media (max-width: $mobile-breakpoint) {
+      z-index:1;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
     }
 
-    .close {
-      position: absolute;
-      cursor: pointer;
 
-      @media (min-width: $desktop-breakpoint) {
-        top: 5%;
-        right: -50px;
-        width: 26px;
-        height: 27px;
-        background: url(../images/close.png) no-repeat center center;
-        background-size: 26px 27px;
-      }
-
-      @media (max-width: $mobile-breakpoint) {
-        top: 22px;
-        right: 12px;
-        width: 24px;
-        height: 23px;
-        background: url(../images/close-mobile.png) no-repeat center center;
-        background-size: 24px 23px;
-      }
-    }
 
     .contents {
       height: 100%;
@@ -531,6 +595,16 @@ body.default {
   }
 
   &.manifesto {
+    .social {
+      width: 100%;
+      position:absolute;
+      bottom:5%;
+      text-align: center;
+
+      @media (max-width: $mobile-breakpoint) {
+        padding-bottom: 20px;
+      }
+    }
     .contents {
       h1 {
         margin: 50px 0 30px 0;
@@ -553,14 +627,7 @@ body.default {
         }
       }
 
-      .social {
-        width: 100%;
-        text-align: center;
 
-        @media (max-width: $mobile-breakpoint) {
-          padding-bottom: 20px;
-        }
-      }
     }
   }
 
@@ -578,8 +645,10 @@ body.default {
           display: block;
           margin: 0 0 32px 0;
 
-          a {
+          a, button {
             color: #fff;
+            border:0;
+            background:none;
             font-size: 19px;
             text-decoration: none;
           }

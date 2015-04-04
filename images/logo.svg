@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="161px" height="26px" viewBox="0 0 161 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>INFEEDL + Rectangle + Rectangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M16.7867194,11.2489795 L16.7867194,14.9314286 L4.35604743,14.9314286 L4.35604743,21.9142857 L18.5574704,21.9142857 L18.5574704,26 L0,26 L0,11.2489795 L16.7867194,11.2489795 Z M4.35604743,4.1122449 L4.35604743,4.08571429 L18.3803953,4.08571429 L18.3803953,0 L0,0 L0,4.1122449 L4.35604743,4.1122449 Z" id="path-1"></path>
+        <path d="M16.7867194,11.2489795 L16.7867194,14.9314286 L4.35604743,14.9314286 L4.35604743,21.9142857 L18.5574704,21.9142857 L18.5574704,26 L0,26 L0,11.2489795 L16.7867194,11.2489795 Z M4.35604743,4.1122449 L4.35604743,4.08571429 L18.3803953,4.08571429 L18.3803953,0 L0,0 L0,4.1122449 L4.35604743,4.1122449 Z" id="path-3"></path>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Main,-Desktop-2" sketch:type="MSArtboardGroup" transform="translate(-165.000000, -56.000000)">
+            <g id="INFEEDL-+-Rectangle-+-Rectangle" sketch:type="MSLayerGroup" transform="translate(165.000000, 56.000000)">
+                <path d="M0,26 L4.35604743,26 L4.35604743,0 L0,0 L0,26 Z M11.8640316,26 L16.149249,26 L16.149249,7.50285714 L29.8194466,26 L33.4671937,26 L33.4671937,0 L29.1819763,0 L29.1819763,17.9771429 L15.9013439,0 L11.8640316,0 L11.8640316,26 Z M40.7272727,26 L45.0833202,26 L45.0833202,15.4142857 L57.5848221,15.4142857 L57.5848221,11.2542857 L45.0833202,11.2542857 L45.0833202,4.16 L59.178498,4.16 L59.178498,0 L40.7272727,0 L40.7272727,26 Z M142.6517,26 L160.040474,26 L160.040474,21.84 L147.007747,21.84 L147.007747,0 L142.6517,0 L142.6517,26 Z" id="INFEEDL" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+                <path d="M114.071779,4.13876903 L114.071779,0 L123.315099,0 C131.106403,0 136.489486,5.60857143 136.489486,13 C136.489486,20.3171429 131.106403,26 123.315099,26 L114.071779,26 L114.071779,11.2755036 L118.427826,11.2755036 L118.427826,21.84 L123.315099,21.84 C128.521107,21.84 131.920949,18.1628571 131.920949,13 C131.920949,7.91142857 128.521107,4.16 123.315099,4.16 L118.660553,4.16 L118.660553,4.13876903 L114.071779,4.13876903 Z" id="Path" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+                <g id="Rectangle" transform="translate(64.865138, 0.000000)">
+                    <mask id="mask-2" sketch:name="Mask" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#FFFFFF" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                </g>
+                <g id="Rectangle" transform="translate(89.458340, 0.000000)">
+                    <mask id="mask-4" sketch:name="Mask" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <use id="Mask" fill="#FFFFFF" sketch:type="MSShapeGroup" xlink:href="#path-3"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
