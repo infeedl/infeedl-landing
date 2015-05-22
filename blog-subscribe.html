@@ -2,9 +2,15 @@
 layout: subscribe
 ---
 
-<div class="btns">
+<div class="btns" style="padding: 30px 0; margin-top: -48px;">
   <form class="focused for-blog">
     <input class="launch" type="text" placeholder="Ваш email" data-blur-placeholder="Узнать о запуске" data-focus-placeholder="Ваш email" data-complete-placeholder="Спасибо! Будем держать в курсе." />
     <button type="submit" class="submit"></button>
   </form>
 </div>
+
+<script src="//cdn.infeedl.com/js/infeedl.min.js" crossorigin></script>
+<script>
+  var infeedl = new Infeedl.Iframe(".btns");
+  Infeedl.$("form").on("submit", function() { infeedl.action(); });
+</script>
