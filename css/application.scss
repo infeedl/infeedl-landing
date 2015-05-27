@@ -1,28 +1,13 @@
 ---
 ---
 
-/*@font-face {
-  font-family: "gotham_proregular";
-  src: url("../vendor/fonts/gothaproreg-webfont.eot");
-  src: url("../vendor/fonts/gothaproreg-webfont.eot?#iefix") format("embedded-opentype"),
-       url("../vendor/fonts/gothaproreg-webfont.woff") format("woff"),
-       url("../vendor/fonts/gothaproreg-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}*/
-
-
 @font-face {
   font-family: 'AvenirNextCyr-Regular';
-  src: url('AvenirNextCyr-Regular.eot?#iefix') format('embedded-opentype'),  url('AvenirNextCyr-Regular.otf')  format('opentype'),
-	     url('AvenirNextCyr-Regular.woff') format('woff'), url('AvenirNextCyr-Regular.ttf')  format('truetype'), url('AvenirNextCyr-Regular.svg#AvenirNextCyr-Regular') format('svg');
+  src: url('../vendor/fonts/AvenirNextCyr-Regular.eot?#iefix') format('embedded-opentype'),  url('../vendor/fonts/AvenirNextCyr-Regular.otf')  format('opentype'),
+	     url('../vendor/fonts/AvenirNextCyr-Regular.woff') format('woff'), url('../vendor/fonts/AvenirNextCyr-Regular.ttf')  format('truetype'), url('../vendor/fonts/AvenirNextCyr-Regular.svg#AvenirNextCyr-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-
-
-
-
 
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
@@ -95,7 +80,7 @@ $subscribe-launch-right: #61B0C2;
 
 $mobile-breakpoint: 959px;
 $desktop-breakpoint: 960px;
-$regular-font-size: 15px;
+$regular-font-size: 14px;
 
 @include keyframes(manifesto-button) {
   0% { @include opacity(1); }
@@ -132,7 +117,7 @@ html, body {
 
 body.default {
   @media (min-width: $desktop-breakpoint) {
-    @include gradient-background();
+    background: url(../images/bg.jpg) no-repeat center center;
   }
 }
 
@@ -152,7 +137,7 @@ body.default {
 }
 
 .top {
-  @include gradient-background();
+  background: url(../images/bg.jpg) no-repeat center center;
 
   @media (min-width: $desktop-breakpoint) {
     position: absolute;
@@ -301,9 +286,10 @@ body.default {
       color: #fff;
 
       h1 {
+        font-family: "garamond-premier-pro";
         font-weight: normal;
-        font-size: 38px;
-        line-height: 46px;
+        font-size: 44px;
+        line-height: 60px;
         margin: 10px 0;
 
         @media (max-width: $mobile-breakpoint) {
@@ -325,7 +311,7 @@ body.default {
         color:#FFF;
         margin-top:20px;
         margin-bottom:40px;
-        background:rgba(0, 0, 0, .2);
+        background:rgba(0, 0, 0, .7);
         border-radius:5px;
         padding: 16px 18px;
 
@@ -333,16 +319,17 @@ body.default {
           color:#FF0;
         }
 
-        a{
-          color:#FF0;
+        a {
+          color: #F5A623;
           display: inline-block;
-          border-bottom: 1px solid rgba(255, 255, 0, .4);
-          -webkit-transition:all .6s ease;
-          text-decoration:none;
+          border-bottom: 1px solid #F5A623;
+          transition: all .6s ease;
+          text-decoration: none;
+
           &:hover{
-            color:#8CCBDC;
-            border-bottom: 1px solid rgba(140, 203, 220, .4);
-            -webkit-transition:all .2s ease;
+            color: #2B8EE1;
+            border-bottom: 1px solid #2B8EE1;
+            transition: all .2s ease;
           }
         }
       }
@@ -356,29 +343,31 @@ body.default {
         }
       }
     }
+  }
 
-    .devices {
-      position: absolute;
-      left: 50%;
-      width: 525px;
+  .example {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 525px;
 
-      @media (max-width: $mobile-breakpoint) {
-        display: none;
-      }
+    @media (max-width: $mobile-breakpoint) {
+      display: none;
+    }
 
-      span {
-        display: inline-block;
-        width: 492px;
-        height: 645px;
-        background: url(../images/devices.png) no-repeat center center;
-        background-size: 492px 645px;
-      }
+    iframe {
+      display: block;
+      width: 492px;
+      height: 445px;
+      border: 0;
     }
   }
 }
 
 .bottom {
   @include box-shadow(0, 1px, 3px, rgba(0, 0, 0, 29));
+  background: #212121;
+  color: #fff;
 
   @media (min-width: $desktop-breakpoint) {
     position: fixed;
@@ -388,8 +377,6 @@ body.default {
     height: 20%;
     min-height: 125px;
   }
-
-  background: #fff;
 
   .inner {
     @media (min-width: $desktop-breakpoint) {
@@ -442,7 +429,7 @@ body.default {
       &.icon02 {
         @media (min-width: $desktop-breakpoint) {
           background: url(../images/icon02.png) no-repeat center 20%;
-          background-size: 57px 66px;
+          background-size: 58px 67px;
         }
 
         @media (max-width: $mobile-breakpoint) {
@@ -454,7 +441,7 @@ body.default {
       &.icon03 {
         @media (min-width: $desktop-breakpoint) {
           background: url(../images/icon03.png) no-repeat center 20%;
-          background-size: 51px 61px;
+          background-size: 50px 61px;
         }
 
         @media (max-width: $mobile-breakpoint) {
@@ -466,7 +453,7 @@ body.default {
       &.icon04 {
         @media (min-width: $desktop-breakpoint) {
           background: url(../images/icon04.png) no-repeat center 20%;
-          background-size: 106px 59px;
+          background-size: 105px 60px;
         }
 
         @media (max-width: $mobile-breakpoint) {
@@ -478,7 +465,7 @@ body.default {
       &.icon05 {
         @media (min-width: $desktop-breakpoint) {
           background: url(../images/icon05.png) no-repeat center 20%;
-          background-size: 66px 60px;
+          background-size: 66px 61px;
         }
 
         @media (max-width: $mobile-breakpoint) {
@@ -503,25 +490,6 @@ body.default {
           padding: 0 10%;
         }
       }
-    }
-  }
-}
-
-.deep-bottom {
-  @media (min-width: $desktop-breakpoint) {
-    display: none;
-  }
-
-  @include gradient-background();
-  text-align: center;
-
-  .inner {
-    padding: 40px 10% 22px 10%;
-    width: 80%;
-
-    .btns {
-      margin-top: 0;
-      margin-bottom: 16px;
     }
   }
 }
