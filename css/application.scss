@@ -324,6 +324,7 @@ body.en {
           line-height: 24px;
         }
       }
+
       .launch{
         color:#FFF;
         margin-top:20px;
@@ -350,6 +351,42 @@ body.en {
           }
         }
       }
+
+      .beta {
+        margin-top: 50px;
+
+        a {
+          @include transition(all, .2s, ease-in);
+
+          display: inline-block;
+          text-decoration: none;
+          padding: 15px 30px;
+          font-size: 16px;
+          line-height: 16px;
+          color: #F5A623;
+          white-space: nowrap;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+
+        .btn {
+          background: #F5A623;
+          box-shadow: 0px 0px 4px 0px rgba(255,255,255,0.15);
+          color: #000000;
+          border-radius: 40px;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          font-size: 12px;
+
+          &:hover {
+            background: #fff;
+            color: #000;
+          }
+        }
+      }
+
       .like{
         display:none;
 
@@ -374,7 +411,7 @@ body.en {
 
     iframe {
       display: block;
-      width: 492px;
+      width: 472px;
       height: 445px;
       border: 0;
     }
