@@ -115,12 +115,6 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-body.default {
-  @media (min-width: $desktop-breakpoint) {
-    background: url(../images/bg.jpg) no-repeat center center;
-  }
-}
-
 body.en {
   .header {
     ul {
@@ -153,7 +147,10 @@ body.en {
 }
 
 .top {
-  background: url(../images/bg.jpg) no-repeat center center;
+  background: url(../images/bg.jpg) no-repeat top center;
+  background-size: cover;
+  -moz-background-size: cover;
+  background-position: center;
 
   @media (min-width: $desktop-breakpoint) {
     position: absolute;
@@ -305,7 +302,7 @@ body.en {
       h1 {
         font-family: "garamond-premier-pro";
         font-weight: normal;
-        font-size: 44px;
+        font-size: 48px;
         line-height: 56px;
         margin: 10px 0;
 
@@ -316,8 +313,9 @@ body.en {
       }
 
       p {
-        font-size: 16px;
-        line-height: 22px;
+        font-size: 18px;
+        line-height: 28px;
+
 
         @media (max-width: $mobile-breakpoint) {
           font-size: 16px;
@@ -353,7 +351,7 @@ body.en {
       }
 
       .beta {
-        margin-top: 50px;
+        margin-top: 25px;
 
         a {
           @include transition(all, .2s, ease-in);
@@ -362,7 +360,7 @@ body.en {
           text-decoration: none;
           padding: 15px 30px;
           font-size: 16px;
-          line-height: 16px;
+          line-height: 17px;
           color: #F5A623;
           white-space: nowrap;
 
@@ -437,7 +435,7 @@ body.en {
       position: absolute;
       top: 50%;
       left: 50%;
-      margin-top: -60px;
+      margin-top: -65px;
       margin-left: -470px;
     }
   }
@@ -467,6 +465,7 @@ body.en {
       position: relative;
       padding: 0;
       margin: 0;
+
 
       &.icon01 {
         @media (min-width: $desktop-breakpoint) {
@@ -534,7 +533,7 @@ body.en {
         top: 80px;
         width: 100%;
         text-align: center;
-        margin-top: 4px;
+        margin-top: 6px;
         font-size: $regular-font-size;
 
         @media (max-width: $mobile-breakpoint) {
