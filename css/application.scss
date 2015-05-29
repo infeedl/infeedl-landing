@@ -399,9 +399,9 @@ body.en {
 
   .example {
     position: absolute;
-    left: 50%;
+    right: 0;
     bottom: 0;
-    width: 525px;
+    width: 320px;
 
     @media (max-width: $mobile-breakpoint) {
       display: none;
@@ -409,7 +409,7 @@ body.en {
 
     iframe {
       display: block;
-      width: 472px;
+      width: 100%;
       height: 445px;
       border: 0;
     }
