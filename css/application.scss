@@ -402,19 +402,19 @@ body.en {
     right: 0;
     top: 140px;
     width: 403px;
-    height:811px;
+    height: 811px;
     background:url('../images/iphone-black.png');
-    background-size:403px 811px;
+    background-size: 403px 811px;
 
     @media (max-width: $mobile-breakpoint) {
       display: none;
     }
 
     iframe {
-      margin:99px 0 0 27px;
+      margin: 99px 0 0 27px;
       display: block;
       width: 348px;
-      height: 613px;
+      height: 405px;
       border: 0;
     }
   }
