@@ -402,9 +402,11 @@
     <script src="//cdn.infeedl.com/js/infeedl.min.js" crossorigin></script>
     <script>
       var target = $(".infeedl--placement");
-      $('html,body').animate({
-        scrollTop: target.offset().top - 20
-      }, 3000);
+      setTimeout(function() {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 20
+        }, 2000);
+      }, 2000);
     </script>
   </body>
 </html>
