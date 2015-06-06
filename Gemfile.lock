@@ -80,3 +80,6 @@ DEPENDENCIES
   jekyll (~> 2.5)
   powify
   rack-jekyll!
+
+BUNDLED WITH
+   1.10.3
